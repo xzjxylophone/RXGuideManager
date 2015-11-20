@@ -16,6 +16,9 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+Podfile.lock
+Pods
+
 
 # CocoaPods
 #
