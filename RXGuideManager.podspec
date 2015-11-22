@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name     = "RXGuideManager"
-  s.version  = "0.1"
+  s.version  = "0.2"
   s.license  = "MIT"
   s.summary  = "RXGuideManager is a simple guide manager"
   s.homepage = "https://github.com/xzjxylophone/RXGuideManager"
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.description = %{
         RXGuideManager is a simple guide manager.
   }
-  s.source_files = 'RXGuideManager/*.{h,m}'
+  s.source_files = 'RXGuideManager/*.{h,m,xib}'
   s.frameworks = 'Foundation', 'UIKit'
   s.requires_arc = true
   s.platform = :ios, '5.0'
