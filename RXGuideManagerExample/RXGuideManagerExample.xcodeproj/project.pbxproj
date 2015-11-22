@@ -14,7 +14,6 @@
 		58C415341BFF11D80053F438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C415331BFF11D80053F438 /* Assets.xcassets */; };
 		58C415371BFF11D80053F438 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C415351BFF11D80053F438 /* LaunchScreen.storyboard */; };
 		58C415421BFF12290053F438 /* RXGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C415401BFF12290053F438 /* RXGuideViewController.m */; };
-		58C415431BFF12290053F438 /* RXGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C415411BFF12290053F438 /* RXGuideViewController.xib */; };
 		58C415461BFF12450053F438 /* RXGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C415451BFF12450053F438 /* RXGuideManager.m */; };
 		58C4154A1BFF12580053F438 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C415481BFF12580053F438 /* MainViewController.m */; };
 		58C4154B1BFF12580053F438 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C415491BFF12580053F438 /* MainViewController.xib */; };
@@ -34,7 +33,6 @@
 		58C415381BFF11D80053F438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58C4153F1BFF12290053F438 /* RXGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXGuideViewController.h; sourceTree = "<group>"; };
 		58C415401BFF12290053F438 /* RXGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXGuideViewController.m; sourceTree = "<group>"; };
-		58C415411BFF12290053F438 /* RXGuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RXGuideViewController.xib; sourceTree = "<group>"; };
 		58C415441BFF12450053F438 /* RXGuideManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXGuideManager.h; sourceTree = "<group>"; };
 		58C415451BFF12450053F438 /* RXGuideManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXGuideManager.m; sourceTree = "<group>"; };
 		58C415471BFF12580053F438 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 			children = (
 				58C4153F1BFF12290053F438 /* RXGuideViewController.h */,
 				58C415401BFF12290053F438 /* RXGuideViewController.m */,
-				58C415411BFF12290053F438 /* RXGuideViewController.xib */,
 				58C415441BFF12450053F438 /* RXGuideManager.h */,
 				58C415451BFF12450053F438 /* RXGuideManager.m */,
 				5804D2891C0012F8005A02D6 /* RXGuideManagerHeader.h */,
@@ -169,7 +166,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				58C415371BFF11D80053F438 /* LaunchScreen.storyboard in Resources */,
-				58C415431BFF12290053F438 /* RXGuideViewController.xib in Resources */,
 				58C4154B1BFF12580053F438 /* MainViewController.xib in Resources */,
 				58C415341BFF11D80053F438 /* Assets.xcassets in Resources */,
 				58C415321BFF11D80053F438 /* Main.storyboard in Resources */,

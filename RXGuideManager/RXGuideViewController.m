@@ -11,8 +11,8 @@
 
 
 @interface RXGuideViewController ()<UIScrollViewDelegate>
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
+@property (strong, nonatomic) UIScrollView *scrollView;
+@property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) UITapGestureRecognizer *tgr;
 @end
 
@@ -100,6 +100,15 @@
 {
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+    self.scrollView.delegate = self;
+    
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake((width - 100) / 2.0, height - 30 - 15, 100, 30)];
+    
+    [self.view addSubview:self.scrollView];
+    [self.view addSubview:self.pageControl];
+    
     self.tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startGuideAction:)];
     
     
