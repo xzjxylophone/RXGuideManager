@@ -10,4 +10,6 @@
 
 @interface RXGuideViewController : UIViewController
 
+@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (nonatomic, readonly) UIPageControl *pageControl;
 @end
