@@ -57,6 +57,7 @@ const NSString *kRXGuideManager_6p_6sp_key = @"kRXGuideManager_6p_6sp_key";
     if (self = [super init]) {
         self.pageIndicatorTintColor = [UIColor whiteColor];
         self.currentPageIndicatorTintColor = [UIColor grayColor];
+        self.e_RX_ImageType = kE_RX_ImageType_Png;
     }
     return self;
 }

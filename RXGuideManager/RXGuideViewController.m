@@ -87,8 +87,21 @@
         for (NSUInteger i = 0; i < imgAry.count; i++) {
             UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(i * width, 0, width, height)];
             NSString *imageName = imgAry[i];
+            UIImage *image = nil;
+            switch ([RXGuideManager sharedInstance].e_RX_ImageType) {
+                case kE_RX_ImageType_Png:
+                    image = [UIImage imageNamed:imageName];
+                    break;
+                case kE_RX_ImageType_Jpg:
+                default:
+                {
+                    NSString *filePath = [[NSBundle mainBundle] pathForResource:imageName ofType:@"jpg"];
+                    image = [UIImage imageWithContentsOfFile:filePath];
+                }
+                    break;
+            }
             iv.userInteractionEnabled = YES;
-            iv.image = [UIImage imageNamed:imageName];
+            iv.image = image;
             [viewAry addObject:iv];
         }
     }

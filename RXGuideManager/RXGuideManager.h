@@ -12,6 +12,15 @@
 // 关闭引导页的通知
 #define NKey_RXManager_CloseStartGuide      @"NKey_RXManager_CloseStartGuide"
 
+
+
+typedef enum E_RX_ImageType {
+    kE_RX_ImageType_Png,
+    kE_RX_ImageType_Jpg,
+}E_RX_ImageType;
+
+
+
 extern const NSString *kRXGuideManager_4_4s_key;
 extern const NSString *kRXGuideManager_5_5s_key;
 extern const NSString *kRXGuideManager_6_6s_key;
@@ -25,6 +34,9 @@ extern const NSString *kRXGuideManager_6p_6sp_key;
 //
 @property (nonatomic, strong) NSDictionary *dicGuide;
 
+
+// default kE_RX_ImageType_Png
+@property (nonatomic, assign) E_RX_ImageType e_RX_ImageType;
 
 // default:whiteColor
 @property (nonatomic, strong) UIColor *pageIndicatorTintColor;
