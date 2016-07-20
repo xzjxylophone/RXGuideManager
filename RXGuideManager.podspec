@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name     = "RXGuideManager"
-  s.version  = "0.4"
+  s.version  = "0.6"
   s.license  = "MIT"
   s.summary  = "RXGuideManager is a simple guide manager"
   s.homepage = "https://github.com/xzjxylophone/RXGuideManager"

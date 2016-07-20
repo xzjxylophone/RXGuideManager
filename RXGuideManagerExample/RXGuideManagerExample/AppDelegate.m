@@ -40,8 +40,37 @@
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(nkey_RXManager_CloseStartGuide:) name:NKey_RXManager_CloseStartGuide object:nil];
     NSDictionary *dic = @{kRXGuideManager_5_5s_key:@[@"info5_1", @"info5_2", @"info5_3"]};
-    [RXGuideManager sharedInstance].dicGuide = dic;
-    [RXGuideManager sharedInstance].pageIndicatorTintColor = [UIColor redColor];
+//    [RXGuideManager sharedInstance].dicGuide = dic;
+    
+    NSArray *(^viewArray)(void) = ^{
+        NSMutableArray *viewAry = [NSMutableArray array];
+        CGFloat width = [UIScreen mainScreen].bounds.size.width;
+        CGFloat height = [UIScreen mainScreen].bounds.size.height;
+        NSArray *colorAry = @[[UIColor redColor], [UIColor redColor], [UIColor redColor]];
+        for (NSInteger i = 0; i < colorAry.count; i++) {
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(i * width, 0, width, height)];
+            UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+            lbl.backgroundColor = colorAry[i];
+            lbl.text = [NSString stringWithFormat:@"这是第%zd页", i + 1];
+            lbl.textAlignment = NSTextAlignmentCenter;
+            lbl.font = [UIFont systemFontOfSize:40];
+            lbl.numberOfLines = 0;
+            [view addSubview:lbl];
+            if (i == colorAry.count - 1) {
+                UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+                btn.frame = CGRectMake(20, height - 50 - 30, width - 20 * 2, 50);
+                [btn setTitle:@"立即体验" forState:UIControlStateNormal];
+                [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                [view addSubview:btn];
+            }
+            [viewAry addObject:view];
+        }
+        return viewAry;
+
+    };
+    
+    [RXGuideManager sharedInstance].viewArray = viewArray;
+    [RXGuideManager sharedInstance].pageIndicatorTintColor = [UIColor orangeColor];
     [RXGuideManager sharedInstance].currentPageIndicatorTintColor = [UIColor blackColor];
     BOOL showGuide = [RXGuideManager firstStartGuideValue];
 #if DEBUG

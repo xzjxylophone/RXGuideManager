@@ -30,9 +30,12 @@ extern const NSString *kRXGuideManager_6p_6sp_key;
 
 
 
-//
-//
+// 优先使用dicGuide,然后使用viewArray
+// if not have use test
 @property (nonatomic, strong) NSDictionary *dicGuide;
+
+// viewArray的block, 使用完毕后,不设置为空
+@property (nonatomic, copy) NSArray *(^viewArray)(void);
 
 
 // default kE_RX_ImageType_Png

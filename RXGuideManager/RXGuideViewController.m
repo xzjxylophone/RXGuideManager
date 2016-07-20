@@ -62,25 +62,34 @@
     
     BOOL isTest = (imgAry.count == 0);
     if (isTest) {
-        // 是测试
-        NSArray *colorAry = @[[UIColor redColor], [UIColor greenColor], [UIColor blueColor]];
-        for (NSInteger i = 0; i < colorAry.count; i++) {
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(i * width, 0, width, height)];
-            UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, height)];
-            lbl.backgroundColor = colorAry[i];
-            lbl.text = [NSString stringWithFormat:@"这是第%zd页", i + 1];
-            lbl.textAlignment = NSTextAlignmentCenter;
-            lbl.font = [UIFont systemFontOfSize:40];
-            lbl.numberOfLines = 0;
-            [view addSubview:lbl];
-            if (i == colorAry.count - 1) {
-                UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-                btn.frame = CGRectMake(20, height - 50 - 30, width - 20 * 2, 50);
-                [btn setTitle:@"立即体验" forState:UIControlStateNormal];
-                [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-                [view addSubview:btn];
+        NSArray *viewArray = nil;
+        // 使用block的Array
+        if ([RXGuideManager sharedInstance].viewArray != nil) {
+            viewArray = [RXGuideManager sharedInstance].viewArray();
+        }
+        if (viewArray.count != 0) {
+            [viewAry addObjectsFromArray:viewArray];
+        } else {
+            // 是测试
+            NSArray *colorAry = @[[UIColor redColor], [UIColor greenColor], [UIColor blueColor]];
+            for (NSInteger i = 0; i < colorAry.count; i++) {
+                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(i * width, 0, width, height)];
+                UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+                lbl.backgroundColor = colorAry[i];
+                lbl.text = [NSString stringWithFormat:@"这是第%zd页", i + 1];
+                lbl.textAlignment = NSTextAlignmentCenter;
+                lbl.font = [UIFont systemFontOfSize:40];
+                lbl.numberOfLines = 0;
+                [view addSubview:lbl];
+                if (i == colorAry.count - 1) {
+                    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+                    btn.frame = CGRectMake(20, height - 50 - 30, width - 20 * 2, 50);
+                    [btn setTitle:@"立即体验" forState:UIControlStateNormal];
+                    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                    [view addSubview:btn];
+                }
+                [viewAry addObject:view];
             }
-            [viewAry addObject:view];
         }
     } else {
         // 不是测试
